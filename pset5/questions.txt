@@ -1,0 +1,27 @@
+0.  GIF for animation
+1.  BMP = 32 bits or over 4 million, GIF = 256 colors, JPeg = 16.7 million, PNG = 16 million
+2.  Lossless compression recreatea a file as an identical match to its original form.  Lossy compression eliminates repeated or unnecessary
+    pieces of data.
+3.  JPeg
+4.  Two things, one the system modifies te file name's first character in the file's directory entry to signal that the file has been deleted and
+    that the directory entry can be recycled.  Second, the system moves all of the file's FAT clusters to the hard drive's list of free clusters.
+    The actual file data is never touched.
+5.  I can use a disk sanitizer/decassifers and a slack-space sanitizer to sanitize hard drive info by intentionall over writing that data with 
+    other data so the orignal data cannot be recovered.
+6.  A header file that declares sets of integers types having specified widths and shall define corresponding sets of macros.  It shall also define
+    macros that specify limits of intefer types corresponding to types defined in other standard headers.
+7.  Because they are integer types having exactly the specified width.  They are exact integer types and defined in stdint.h.
+8.  Byte = 1 Byte, Dword = 4 bytes, word = 2 bytes, long = 4 bytes
+9.  They are the first bits of a file which uniquely identify the type of file. FF, D8, FF, EO = JPeg
+10. Bi-size is the size of the bitmapinfoheader structure given in bytes usually 40.  Bfsize is the size of the entire header structure including
+    the color table, plus the size of the bit map data.  Normall they header is split up into a bitmapfileheader and a bitmapinfo(bitmapinfoheader
+    and a color table of RGB Quads).
+11. The bitmap is top down DIB with the orgin a the upper left corner.
+12. The biBit Count member determines the number of bits that define each pixel and max number of colors in a bitmap.
+13. fopens opens a file for subsequent reading or writing.  If successful, "fopen returns a pointer-to-structure, if it fails it returns NULL.
+14. number of elements to read one at a time.
+15. 3 * 3 = 9 + 3 = 12; 3 bytes
+16. Skips over any padding and looks for the next pixel (RGBTRIPLE)
+17. This is an integer constant which when used is the argument to fseek or fseek function specifies that the offset provided is relative to
+    the current file position.
+18. Milo Banana dun it!

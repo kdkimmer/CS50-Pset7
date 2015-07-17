@@ -1,0 +1,30 @@
+0.  It is the maximum length of a word.
+1.  Get resource information about resource utilization.
+2.  16
+3.  Putting in pointers saves memory because the data in the structs does not need to be copied into local memory.
+4.  In order to read words, main loads in the selected dictionary into memory via the load function.  Main then opens
+    up a text file to be spelled check via fopen.  The loop iterates from the first character per fgetc(fc), to the end
+    of file, per EDF, with the filepointer (fp) being advanced in the stream by one character after each iteration. In
+    the first if statement of the for loop, the current character is added to the word, the index incremented, so long as
+    the length for a word hasn't been exceded, else the word is eaten up by a while loop which throws away the remaining
+    characters.  The second conditional else if handles words containing numbers by throwing away any remaining chacters 
+    in them.  The final conditional else if ensures the index is > 0 (we not encounting a space) and shows we reached the 
+    end of the word.  The counter for total number of words is updated and the word is terminated with a null character.  
+    The words spelling is than checked via check(char* word), if the word is misspelled that is shown to the console and 
+    total misspellings is updated.  Finally, index is set to 0 to initialize a new word.
+5.  Using fgetc is more efficient because in this way we can automatically stop reading in a word when we know it is no 
+    longer valid due to our rules as to what constitutes a word.  For example if a word has non-alpha, non-apostrophe 
+    characters or has length > 45, we stop reading.  With fscanf, a user could input a huge text file as the file to be
+    spell checked with the program spending lots of time trying to load that into memory.
+6.  This would ensure that the values passed in by a pointer are not altered the function, but that the values can be used.
+7.  I used a hashtable to load the dictionary, by seperating the letters into different linked list so that is would read like a real dictionary.
+8.  This is using the text Austin Powers
+    TIME IN load:         0.18				      |	TIME IN load:         0.23
+    TIME IN check:        0.03				      |	TIME IN check:        0.02
+    TIME IN size:         0.00					    TIME IN size:         0.00
+    TIME IN unload:       0.04				      |	TIME IN unload:       0.18
+    TIME IN TOTAL:        0.25				      |	TIME IN TOTAL:        0.43
+9.  I will be looking at what I can do to make the hashtable smaller.  My ideas would be to seperate the hash index further by using aa, ab, ac
+    so on although that would not necessarily help make the hashtable smaller.
+10. I use hash table as the data structure by seperating the whole dictionary into a linked list.  I can only keep dividing the words by 
+    enlarging the hash table.  This creates a lot of NULL pointers which is a waste.
